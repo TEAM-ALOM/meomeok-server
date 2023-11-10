@@ -5,20 +5,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class filter {
+public class Menu {
+
     @Id
-    @Column(name="FILTER_ID", unique = true, nullable = false)
+    @Column(name = "MENU_ID", unique = true, nullable = false)
     private Long id;
 
     @Column(length = 45, name = "NAME")
     private String name;
 
-    @ManyToOne(targetEntity = menu.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "MENU_ID")
-    private menu menu;
+    @OneToMany(mappedBy = "menu", fetch = FetchType.LAZY)
+    private List<Filter> filterList;
+
+    public Menu(String name) {
+        this.name = name;
+    }
 
 }
