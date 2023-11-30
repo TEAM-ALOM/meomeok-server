@@ -11,6 +11,7 @@ import lombok.Setter;
 @Entity
 public class Filter {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="FILTER_ID", unique = true, nullable = false)
     private Long id;
 

@@ -8,5 +8,4 @@ import java.util.List;
 
 public interface FilterRepository extends JpaRepository<Filter, Long> {
 
-    List<Filter> findAllByMenuIn(List<Menu> menuList);
 }

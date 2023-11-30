@@ -14,6 +14,7 @@ import java.util.List;
 public class Menu {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MENU_ID", unique = true, nullable = false)
     private Long id;
 
@@ -22,9 +23,5 @@ public class Menu {
 
     @OneToMany(mappedBy = "menu", fetch = FetchType.LAZY)
     private List<Filter> filterList;
-
-    public Menu(String name) {
-        this.name = name;
-    }
 
 }
