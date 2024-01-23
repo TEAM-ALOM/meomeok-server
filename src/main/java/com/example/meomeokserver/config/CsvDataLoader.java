@@ -4,6 +4,7 @@ import com.example.meomeokserver.domain.Filter;
 import com.example.meomeokserver.domain.Menu;
 import com.example.meomeokserver.repository.FilterRepository;
 import com.example.meomeokserver.repository.MenuRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -27,6 +28,7 @@ public class CsvDataLoader {
         this.filterRepository = filterRepository;
     }
 
+    @PostConstruct
     public void loadCsvData() {
         loadMenuData();
         loadFilterData();

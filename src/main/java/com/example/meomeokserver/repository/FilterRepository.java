@@ -11,7 +11,5 @@ import java.util.List;
 @Repository
 public interface FilterRepository extends JpaRepository<Filter, Long> {
 
-    List<Filter> findAll();
-
     boolean existsByName(String filterName);
 }
