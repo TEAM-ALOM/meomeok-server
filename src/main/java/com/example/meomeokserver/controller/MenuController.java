@@ -1,6 +1,7 @@
 package com.example.meomeokserver.controller;
 
 import com.example.meomeokserver.domain.Filter;
+import com.example.meomeokserver.dto.FilterDTO;
 import com.example.meomeokserver.dto.MenuDTO;
 import com.example.meomeokserver.service.MenuService;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +19,15 @@ public class MenuController {
         this.menuService = menuService;
     }
 
-    @GetMapping("/menu")
+    /*@GetMapping("/menu")
     public Optional<MenuDTO> showMenu(@RequestParam(value = "selectedFilters", required = false) List<Filter> selectedFilters) {
 
         return menuService.findRandomMenu(selectedFilters);
+    }*/
+
+    @GetMapping("/menu")
+    public List<MenuDTO> shoeMenu() {
+
+        return menuService.findAll();
     }
 }

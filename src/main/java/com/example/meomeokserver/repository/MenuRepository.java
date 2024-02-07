@@ -13,8 +13,8 @@ import java.util.Optional;
 @Repository
 public interface MenuRepository extends JpaRepository<Menu, Long> {
 
-    @Query("SELECT menu FROM Menu menu WHERE menu.filters IS NOT EMPTY AND menu.filters IN :filters")
-    List<Menu> findByFiltersContains(@Param("filters") List<Filter> filters);
+    //@Query("SELECT menu FROM Menu menu WHERE menu.filters IS NOT EMPTY AND menu.filters IN :filters")
+    //List<Menu> findByFiltersContains(@Param("filters") List<Filter> filters);
 
     Menu findByName(String menuName);
 
