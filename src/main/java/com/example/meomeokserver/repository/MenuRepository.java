@@ -8,12 +8,15 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface MenuRepository extends JpaRepository<Menu, Long> {
 
     @Query("SELECT menu FROM Menu menu WHERE menu.filters IS NOT EMPTY AND menu.filters IN :filters")
     List<Menu> findByFiltersContains(@Param("filters") List<Filter> filters);
+
+    Menu findByName(String menuName);
 
     boolean existsByName(String menuName);
 }
