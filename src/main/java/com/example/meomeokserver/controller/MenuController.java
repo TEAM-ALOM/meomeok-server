@@ -16,7 +16,7 @@ public class MenuController {
     }
 
     @GetMapping("/menu")
-    public List<MenuDTO> shoeMenu() {
+    public List<MenuDTO> showMenu() {
 
         return menuService.findAll();
     }
