@@ -1,6 +1,5 @@
 package com.example.meomeokserver.dto;
 
-import com.example.meomeokserver.domain.Filter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
